@@ -99,7 +99,7 @@
     <Folder Include="Automapper\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Viainternet.OnionArchitecture.Core\Core.csproj">
+    <ProjectReference Include="..\Core\Core.csproj">
       <Project>{ba94bdcf-bd9c-4ac3-9ad9-506c2b6fce79}</Project>
       <Name>Core</Name>
     </ProjectReference>

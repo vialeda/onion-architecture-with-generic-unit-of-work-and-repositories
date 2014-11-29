@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.Website", "Viainternet.OnionArchitecture.Website\Presentation.Website.csproj", "{C69ABA69-CC0A-4809-A5E4-B63176E6A356}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.Website", "Presentation.Website\Presentation.Website.csproj", "{C69ABA69-CC0A-4809-A5E4-B63176E6A356}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D89C6829-EA02-4198-9B42-5C2F2E5D904B}"
 EndProject
@@ -11,26 +11,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{2F2958
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{AA68CFC6-F624-422C-AB64-1CB4FC3FDFA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.UI", "Viainternet.OnionArchitecture.Tests.UI\Tests.UI.csproj", "{95464732-A1A2-48C6-B200-511F225A2B90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.UI", "Tests.UI\Tests.UI.csproj", "{95464732-A1A2-48C6-B200-511F225A2B90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Performance", "Viainternet.OnionArchitecture.Tests.Performance\Tests.Performance.csproj", "{E3D4E67E-A856-4B5E-BE45-98BADF1E2844}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Performance", "Tests.Performance\Tests.Performance.csproj", "{E3D4E67E-A856-4B5E-BE45-98BADF1E2844}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7E8AF261-164C-4E56-853C-5B220794A98C}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit", "Viainternet.OnionArchitecture.Tests.Unit\Tests.Unit.csproj", "{CED96FAA-9636-4457-BEAA-F2A3A8361C33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit", "Tests.Unit\Tests.Unit.csproj", "{CED96FAA-9636-4457-BEAA-F2A3A8361C33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Integration", "Viainternet.OnionArchitecture.Tests.Integration\Tests.Integration.csproj", "{7F005AEF-06E6-4691-945D-8149454D6166}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Integration", "Tests.Integration\Tests.Integration.csproj", "{7F005AEF-06E6-4691-945D-8149454D6166}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Viainternet.OnionArchitecture.Core\Core.csproj", "{BA94BDCF-BD9C-4AC3-9AD9-506C2B6FCE79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{BA94BDCF-BD9C-4AC3-9AD9-506C2B6FCE79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Services", "Viainternet.OnionArchitecture.Core.Services\Core.Services.csproj", "{151E22FA-F714-4708-8E63-F7AE5A339DB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Services", "Core.Services\Core.Services.csproj", "{151E22FA-F714-4708-8E63-F7AE5A339DB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Infrastructure", "Viainternet.OnionArchitecture.Infrastructure\Infrastructure.Infrastructure.csproj", "{E720F55E-C91C-4CF3-B6C6-5E77FC482DB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Infrastructure", "Infrastructure\Infrastructure.csproj", "{E720F55E-C91C-4CF3-B6C6-5E77FC482DB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.DependecyResolution", "DependecyResolution\Infrastructure.DependecyResolution.csproj", "{E888295A-75AF-4124-8CA4-7D62D6C1B00C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.DependecyResolution", "Infrastructure.DependecyResolution\Infrastructure.DependecyResolution.csproj", "{E888295A-75AF-4124-8CA4-7D62D6C1B00C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{871355D7-0BD0-49AF-98B8-350AEFD40063}"
 EndProject

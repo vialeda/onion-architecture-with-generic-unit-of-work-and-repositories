@@ -134,15 +134,15 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DependecyResolution\Infrastructure.DependecyResolution.csproj">
+    <ProjectReference Include="..\Infrastructure.DependecyResolution\Infrastructure.DependecyResolution.csproj">
       <Project>{e888295a-75af-4124-8ca4-7d62d6c1b00c}</Project>
       <Name>Infrastructure.DependecyResolution</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Viainternet.OnionArchitecture.Core.Services\Core.Services.csproj">
+    <ProjectReference Include="..\Core.Services\Core.Services.csproj">
       <Project>{151e22fa-f714-4708-8e63-f7ae5a339db9}</Project>
       <Name>Core.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Viainternet.OnionArchitecture.Core\Core.csproj">
+    <ProjectReference Include="..\Core\Core.csproj">
       <Project>{ba94bdcf-bd9c-4ac3-9ad9-506c2b6fce79}</Project>
       <Name>Core</Name>
     </ProjectReference>
