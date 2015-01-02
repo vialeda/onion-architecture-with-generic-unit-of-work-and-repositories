@@ -13,6 +13,12 @@ The main goal of the project is to offert a really complete template of Onion ar
 
 Feel free to update this template to include the latest standard about the architecture.
 
+Coming soon this year
+==========================================
+Integration of freemium module (http://code.msdn.microsoft.com/WATFreemium)
+Integration of PayPal
+Integration of a user membership, profile, configuration/preference and role matrix table with cache
+
 Regards,
 
 David Létourneau
