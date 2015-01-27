@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +9,10 @@ using System.Web.Mvc;
 using Viainternet.IndustrieQuebec.Core.Models;
 using Viainternet.OnionArchitecture.Core.Interfaces;
 using Viainternet.OnionArchitecture.Core.Interfaces.IRepositories;
+using Viainternet.OnionArchitecture.Core.Interfaces.IServices;
 using Viainternet.OnionArchitecture.Core.Services;
 using Viainternet.OnionArchitecture.Infrastructure;
 using Viainternet.OnionArchitecture.Infrastructure.Factories;
-using Microsoft.Practices.Unity.Mvc;
-using Microsoft.Practices.Unity;
 
 namespace Viainternet.OnionArchitecture.Infrastructure.DependecyResolution
 {
@@ -40,7 +41,7 @@ namespace Viainternet.OnionArchitecture.Infrastructure.DependecyResolution
 
             // e.g. container.RegisterType<ITestService, TestService>();
             container
-                .RegisterType<IDataContextAsync, CodeFirst>(new PerRequestLifetimeManager())
+                .RegisterType<IDataContextAsync, ApplicationDbContext>(new PerRequestLifetimeManager())
                .RegisterType<IRepositoryProvider, RepositoryProvider>(
                    new PerRequestLifetimeManager(),
                    new InjectionConstructor(new object[] { new RepositoryFactories() })
