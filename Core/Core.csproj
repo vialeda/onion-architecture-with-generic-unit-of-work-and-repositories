@@ -123,9 +123,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domain\Models\PhoneNumber.cs" />
+    <Compile Include="Domain\Models\SystemSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domain\Models\UserMembership.cs" />
     <Compile Include="Domain\Models\Movie.cs" />
-    <Compile Include="Domain\Models\Setting.cs">
+    <Compile Include="Domain\Models\UserSetting.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domain\Models\State.cs">
@@ -134,7 +137,7 @@
     <Compile Include="Domain\Models\UserProfile.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domain\Models\UserSetting.cs">
+    <Compile Include="Domain\Models\UserMembershipSetting.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domain\Service.cs" />

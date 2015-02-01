@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace Viainternet.OnionArchitecture.Core.Domain.Models
 {
-    public class MembershipSetting : Entity
+    /// <summary>
+    /// 
+    /// </summary>
+    public class UserSetting : Entity
     {
-        public string UserMembershipId { get; set; }
-        public int SettingId { get; set; }
-        public object Value { get; set; }
-        public virtual UserMembership UserMembership { get; set; }
-        public virtual Setting Setting { get; set; }
+        public UserSetting()
+        {
+            UserMembershipSettings = new HashSet<UserMembershipSetting>();
+        }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string DisplayName { get; set; }
+        public int ValueType { get; set; }
+
+        public virtual ICollection<UserMembershipSetting> UserMembershipSettings { get; set; }
     }
 }

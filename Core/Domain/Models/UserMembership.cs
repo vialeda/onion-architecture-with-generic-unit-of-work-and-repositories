@@ -17,7 +17,7 @@ namespace Viainternet.OnionArchitecture.Core.Domain.Models
         {
             UnsubscribeDate = DateTime.MinValue;
             CompagnyProfiles = new HashSet<CompanyProfile>();
-            MembershipSettings = new HashSet<MembershipSetting>();
+            UserMembershipSettings = new HashSet<UserMembershipSetting>();
         }
         public override string Id
         {
@@ -60,7 +60,7 @@ namespace Viainternet.OnionArchitecture.Core.Domain.Models
         public DateTime UnsubscribeDate { get; set; }
         public virtual UserProfile UserProfile { get; set; }
         public virtual ICollection<CompanyProfile> CompagnyProfiles { get; set; }
-        public virtual ICollection<MembershipSetting> MembershipSettings { get; set; }
+        public virtual ICollection<UserMembershipSetting> UserMembershipSettings { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserMembership> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

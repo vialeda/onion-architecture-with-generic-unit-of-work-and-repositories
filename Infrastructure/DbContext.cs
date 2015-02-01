@@ -25,8 +25,9 @@ namespace Viainternet.OnionArchitecture.Infrastructure
         public DbSet<State> States { get; set; }
         public DbSet<Municipality> Municipalities { get; set; }
         public DbSet<AreaCode> AreaCodes { get; set; }
-        public DbSet<Setting> Settings { get; set; }
-        public DbSet<MembershipSetting> MembershipSettings { get; set; }
+        public DbSet<UserSetting> UserSettings { get; set; }
+        public DbSet<SystemSetting> SystemSettings { get; set; }
+        public DbSet<UserMembershipSetting> MembershipSettings { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -85,14 +86,14 @@ namespace Viainternet.OnionArchitecture.Infrastructure
             // Those two mapping are a many to many but define like 
             // one two many because we need the between table exist
             // in c# class to save extra data in it.
-            modelBuilder.Entity<MembershipSetting>()
-                .HasRequired(x => x.Setting)
-                .WithMany(x => x.MembershipSettings)
-                .HasForeignKey(x => x.SettingId);
+            modelBuilder.Entity<UserMembershipSetting>()
+                .HasRequired(x => x.UserSetting)
+                .WithMany(x => x.UserMembershipSettings)
+                .HasForeignKey(x => x.UserSettingId);
 
-            modelBuilder.Entity<MembershipSetting>()
+            modelBuilder.Entity<UserMembershipSetting>()
                 .HasRequired(x => x.UserMembership)
-                .WithMany(x => x.MembershipSettings)
+                .WithMany(x => x.UserMembershipSettings)
                 .HasForeignKey(x => x.UserMembershipId);
         }
         /// <summary>
@@ -159,11 +160,11 @@ namespace Viainternet.OnionArchitecture.Infrastructure
             modelBuilder.Entity<AreaCode>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<Setting>()
+            modelBuilder.Entity<UserSetting>()
                 .HasKey(x => x.Id);
             
-            modelBuilder.Entity<MembershipSetting>()
-                .HasKey(x => new { x.UserMembershipId, x.SettingId });
+            modelBuilder.Entity<UserMembershipSetting>()
+                .HasKey(x => new { x.UserMembershipId, SettingId = x.UserSettingId });
         }
 
         public void SyncObjectsStatePostCommit()
