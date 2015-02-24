@@ -28,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Services", "Core.Services\Core.Services.csproj", "{151E22FA-F714-4708-8E63-F7AE5A339DB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Infrastructure", "Infrastructure\Infrastructure.csproj", "{E720F55E-C91C-4CF3-B6C6-5E77FC482DB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Repositories", "Infrastructure\Infrastructure.Repositories.csproj", "{E720F55E-C91C-4CF3-B6C6-5E77FC482DB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.DependecyResolution", "Infrastructure.DependecyResolution\Infrastructure.DependecyResolution.csproj", "{E888295A-75AF-4124-8CA4-7D62D6C1B00C}"
 EndProject
@@ -42,6 +42,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B093CC
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Caching", "Infrastructure.Caching\Infrastructure.Caching.csproj", "{93A3E91D-0954-4A65-9221-3DACB56689C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{F7B213DD-F2A3-4DB8-B89F-DC201F7BE1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7B213DD-F2A3-4DB8-B89F-DC201F7BE1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7B213DD-F2A3-4DB8-B89F-DC201F7BE1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A3E91D-0954-4A65-9221-3DACB56689C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A3E91D-0954-4A65-9221-3DACB56689C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A3E91D-0954-4A65-9221-3DACB56689C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A3E91D-0954-4A65-9221-3DACB56689C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,5 +111,6 @@ Global
 		{E720F55E-C91C-4CF3-B6C6-5E77FC482DB6} = {AA68CFC6-F624-422C-AB64-1CB4FC3FDFA5}
 		{E888295A-75AF-4124-8CA4-7D62D6C1B00C} = {AA68CFC6-F624-422C-AB64-1CB4FC3FDFA5}
 		{F7B213DD-F2A3-4DB8-B89F-DC201F7BE1A0} = {871355D7-0BD0-49AF-98B8-350AEFD40063}
+		{93A3E91D-0954-4A65-9221-3DACB56689C7} = {AA68CFC6-F624-422C-AB64-1CB4FC3FDFA5}
 	EndGlobalSection
 EndGlobal

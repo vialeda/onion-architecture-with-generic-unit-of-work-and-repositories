@@ -23,7 +23,9 @@ namespace Viainternet.OnionArchitecture.Presentation.Website.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Result = _movieService.CustomerOrderTotalByYear();
+            var testResult = _movieService.CustomerOrderTotalByYear();
+            //ViewBag.Result = 1;
+            ViewBag.Result = testResult;
             return View();
         }
     }

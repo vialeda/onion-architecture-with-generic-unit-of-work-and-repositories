@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Viainternet.IndustrieQuebec.Core.Models;
-using Viainternet.OnionArchitecture.Core.Domain;
-using Viainternet.OnionArchitecture.Core.Interfaces.IRepositories;
-using Viainternet.OnionArchitecture.Core.Interfaces.IServices;
-using Viainternet.OnionArchitecture.Infrastructure.Repositories;
+﻿using Infrastructure.Caching;
+
 namespace Viainternet.OnionArchitecture.Core.Services
 {
+    using Core.Domain;
+    using Core.Domain.Models;
+    using Core.Interfaces.IRepositories;
+    using Core.Interfaces.IServices;
+    using Infrastructure.Repositories;
+    
     public class MovieService : Service<Movie>, IMovieService
     {
         private readonly IRepositoryAsync<Movie> _repository;
@@ -20,6 +18,7 @@ namespace Viainternet.OnionArchitecture.Core.Services
             _repository = repository;
         }
 
+        [CachingInterceptor(CachingAction.Add)]
         public int CustomerOrderTotalByYear()
         {
             // add business logic here

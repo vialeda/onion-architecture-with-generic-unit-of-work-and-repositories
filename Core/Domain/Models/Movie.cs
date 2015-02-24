@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Viainternet.OnionArchitecture.Core.Domain;
 
-namespace Viainternet.IndustrieQuebec.Core.Models
+namespace Viainternet.OnionArchitecture.Core.Domain.Models
 {
     public class Movie : Entity
     {

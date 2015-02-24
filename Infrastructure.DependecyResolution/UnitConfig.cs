@@ -1,21 +1,18 @@
-﻿using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Mvc;
+﻿using Infrastructure.Caching;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.InterceptionExtension;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
-using Viainternet.IndustrieQuebec.Core.Models;
-using Viainternet.OnionArchitecture.Core.Interfaces;
-using Viainternet.OnionArchitecture.Core.Interfaces.IRepositories;
-using Viainternet.OnionArchitecture.Core.Interfaces.IServices;
-using Viainternet.OnionArchitecture.Core.Services;
-using Viainternet.OnionArchitecture.Infrastructure;
-using Viainternet.OnionArchitecture.Infrastructure.Factories;
 
 namespace Viainternet.OnionArchitecture.Infrastructure.DependecyResolution
 {
+    using Core.Domain.Models;
+    using Core.Interfaces;
+    using Core.Interfaces.IRepositories;
+    using Core.Interfaces.IServices;
+    using Core.Services;
+    using Infrastructure.Factories;
+
     public static class UnityConfig
     {
         #region Unity Container
@@ -40,16 +37,19 @@ namespace Viainternet.OnionArchitecture.Infrastructure.DependecyResolution
             // it is NOT necessary to register your controllers
 
             // e.g. container.RegisterType<ITestService, TestService>();
+            container.AddNewExtension<Interception>();
             container
                 .RegisterType<IDataContextAsync, ApplicationDbContext>(new PerRequestLifetimeManager())
                .RegisterType<IRepositoryProvider, RepositoryProvider>(
                    new PerRequestLifetimeManager(),
-                   new InjectionConstructor(new object[] { new RepositoryFactories() })
-                   )
+                   new InjectionConstructor(new object[] { new RepositoryFactories() }))
                .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                .RegisterType<IRepositoryAsync<Movie>, Repository<Movie>>()
-               .RegisterType<IMovieService, MovieService>()
-               .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager());
+               .RegisterType<IMovieService, MovieService>(
+                    new Interceptor<InterfaceInterceptor>(),
+                    new InterceptionBehavior<CachingInterceptorAttribute>())
+               .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
+            .RegisterType<CachingInterceptorAttribute>(new InjectionConstructor(CachingAction.Add));
 
             DependencyResolver.SetResolver(new Microsoft.Practices.Unity.Mvc.UnityDependencyResolver(container));
         }
