@@ -12,7 +12,7 @@ namespace Viainternet.OnionArchitecture.Core.Domain.Models
     /// </summary>
     public class UserProfile : Entity, IAdress
     {
-        public int UserMembershipId { get; set; }
+        public string UserMembershipId { get; set; }
         public int MunicipalityId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

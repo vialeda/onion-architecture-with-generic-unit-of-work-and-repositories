@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Viainternet.OnionArchitecture.Presentation.Website.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Viainternet.OnionArchitecture.Presentation.Website.MvcApplication" Language="C#" %>

@@ -19,6 +19,11 @@ namespace Viainternet.OnionArchitecture.Infrastructure
             this.Configuration.LazyLoadingEnabled = true;
         }
 
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<CompanyProfile> CompanyProfiles { get; set; }
         public DbSet<Country> Countries { get; set; }
@@ -55,9 +60,9 @@ namespace Viainternet.OnionArchitecture.Infrastructure
             modelBuilder.Entity<CompanyProfile>()
                 .HasRequired(x => x.Municipality)
                 .WithMany(x => x.CompanyProfiles)
-                .HasForeignKey(x => x.MunicipalityId);
+                .HasForeignKey(x => x.MunicipalityId)
+                .WillCascadeOnDelete(false);
 
-            // La clé primaire appartient à Membership, vérifier si sa fonctionne pareil.
             modelBuilder.Entity<UserProfile>()
                 .HasMany(x => x.PhoneNumbers)
                 .WithRequired(x => x.UserProfile)
@@ -66,7 +71,8 @@ namespace Viainternet.OnionArchitecture.Infrastructure
             modelBuilder.Entity<UserProfile>()
                 .HasRequired(x => x.Municipality)
                 .WithMany(x => x.UserProfiles)
-                .HasForeignKey(x => x.MunicipalityId);
+                .HasForeignKey(x => x.MunicipalityId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Municipality>()
                 .HasRequired(x => x.State)
@@ -164,7 +170,7 @@ namespace Viainternet.OnionArchitecture.Infrastructure
                 .HasKey(x => x.Id);
             
             modelBuilder.Entity<UserMembershipSetting>()
-                .HasKey(x => new { x.UserMembershipId, SettingId = x.UserSettingId });
+                .HasKey(x => new { x.UserMembershipId, x.UserSettingId });
         }
 
         public void SyncObjectsStatePostCommit()

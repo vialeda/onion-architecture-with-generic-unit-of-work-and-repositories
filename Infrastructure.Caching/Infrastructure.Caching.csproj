@@ -7,8 +7,8 @@
     <ProjectGuid>{93A3E91D-0954-4A65-9221-3DACB56689C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Infrastructure.Caching</RootNamespace>
-    <AssemblyName>Infrastructure.Caching</AssemblyName>
+    <RootNamespace>Viainternet.OnionArchitecture.Infrastructure.Caching</RootNamespace>
+    <AssemblyName>Viainternet.OnionArchitecture.Infrastructure.Caching</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>

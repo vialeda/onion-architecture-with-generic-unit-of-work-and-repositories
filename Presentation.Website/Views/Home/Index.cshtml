@@ -1,7 +1,7 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@section SPAViews {
+    @Html.Partial("_Home")
 }
-
-<h2>Index</h2>
-
-@ViewBag.Result
+@section Scripts{
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/app")
+}
