@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace Presentation.Website.Areas.HelpPage.ModelDescriptions
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

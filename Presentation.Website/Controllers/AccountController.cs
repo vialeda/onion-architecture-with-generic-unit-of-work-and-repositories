@@ -1,22 +1,33 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Presentation.Website.Models;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Viainternet.OnionArchitecture.Core.Domain.Models;
-using Viainternet.OnionArchitecture.Core.Services;
 
-namespace Presentation.Website.Controllers
+namespace Viainternet.OnionArchitecture.Presentation.Website.Controllers
 {
-    [Authorize]
+    using Core.Domain.Models;
+    using Core.Interfaces;
+    using Core.Interfaces.IServices;
+    using Presentation.Website.ViewModels;
+
+    
     public class AccountController : BaseController
     {
-        public AccountController()
+        private readonly IUnitOfWorkAsync _unitOfWorkAsync;
+        private IMovieService _movieService;
+        private IUserMembershipService _userMembershipService;
+
+        public AccountController(IUnitOfWorkAsync unitOfWorkAsync,
+            IMovieService movieService,
+            IUserMembershipService userMembershipService)
         {
+            _unitOfWorkAsync = unitOfWorkAsync;
+            _movieService = movieService;
+            _userMembershipService = userMembershipService;
         }
         // The Authorize Action is the end point which gets called when you access any
         // protected Web API. If the user is not logged in then they will be redirected to 
@@ -50,7 +61,6 @@ namespace Presentation.Website.Controllers
             {
                 return View(model);
             }
-
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
@@ -129,7 +139,9 @@ namespace Presentation.Website.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 var user = new UserMembership { UserName = model.Email, Email = model.Email };
+                
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

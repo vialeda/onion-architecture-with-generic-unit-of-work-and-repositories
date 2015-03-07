@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Presentation.Website.Areas.HelpPage.ModelDescriptions;
-using Presentation.Website.Areas.HelpPage.Models;
+using Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.ModelDescriptions;
+using Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.Models;
 
-namespace Presentation.Website.Areas.HelpPage.Controllers
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

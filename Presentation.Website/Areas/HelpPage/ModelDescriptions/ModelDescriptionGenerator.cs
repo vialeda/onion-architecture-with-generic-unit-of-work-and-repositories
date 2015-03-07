@@ -11,7 +11,7 @@ using System.Web.Http.Description;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace Presentation.Website.Areas.HelpPage.ModelDescriptions
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Generates model descriptions for given types.

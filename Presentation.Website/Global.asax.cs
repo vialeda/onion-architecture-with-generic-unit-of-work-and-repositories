@@ -3,8 +3,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Viainternet.OnionArchitecture.Infrastructure.DependecyResolution;
 
-namespace Presentation.Website
+namespace Viainternet.OnionArchitecture.Presentation.Website
 {
     public class MvcApplication : HttpApplication
     {
@@ -15,6 +16,7 @@ namespace Presentation.Website
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            UnityConfig.GetConfiguredContainer();
         }
     }
 }

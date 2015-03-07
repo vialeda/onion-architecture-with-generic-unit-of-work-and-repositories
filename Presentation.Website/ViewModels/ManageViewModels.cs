@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Presentation.Website.Models
+namespace Viainternet.OnionArchitecture.Presentation.Website.Models
 {
     public class IndexViewModel
     {

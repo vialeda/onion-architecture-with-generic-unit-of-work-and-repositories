@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace Presentation.Website.Areas.HelpPage
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

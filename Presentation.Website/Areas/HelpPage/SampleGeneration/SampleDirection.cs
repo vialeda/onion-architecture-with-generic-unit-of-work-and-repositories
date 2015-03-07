@@ -1,4 +1,4 @@
-namespace Presentation.Website.Areas.HelpPage
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

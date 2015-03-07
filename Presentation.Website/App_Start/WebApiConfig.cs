@@ -6,7 +6,7 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 
-namespace Presentation.Website
+namespace Viainternet.OnionArchitecture.Presentation.Website
 {
     public static class WebApiConfig
     {

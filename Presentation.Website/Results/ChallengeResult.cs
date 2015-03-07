@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace Presentation.Website.Results
+namespace Viainternet.OnionArchitecture.Presentation.Website.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

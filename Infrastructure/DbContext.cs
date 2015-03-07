@@ -6,8 +6,10 @@ using Viainternet.OnionArchitecture.Core.Interfaces;
 
 namespace Viainternet.OnionArchitecture.Infrastructure
 {
+    
     public class ApplicationDbContext : IdentityDbContext<UserMembership>, IDataContextAsync
     {
+
         public ApplicationDbContext()
             : base("name=local")
         {
@@ -33,15 +35,22 @@ namespace Viainternet.OnionArchitecture.Infrastructure
         public DbSet<UserSetting> UserSettings { get; set; }
         public DbSet<SystemSetting> SystemSettings { get; set; }
         public DbSet<UserMembershipSetting> MembershipSettings { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Viainternet.OnionArchitecture.Core.Domain.Models.TimeZone> TimeZones { get; set; }
+        public DbSet<Translation> Translations { get; set; }
+        public DbSet<TranslationText> TranslationTexts { get; set; }
+        public DbSet<PhoneNumber> PhoneNumbers { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<IdentityUserClaim>().ToTable("MembershipClaim");
-            modelBuilder.Entity<IdentityUserRole>().ToTable("UserMembershipRole");
-            modelBuilder.Entity<IdentityUserLogin>().ToTable("MembershipLogin");
-            modelBuilder.Entity<IdentityRole>().ToTable("MembershipRole");
-            modelBuilder.Entity<UserMembership>().ToTable("UserMembership");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("MembershipClaims");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserMembershipRoles");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("MembershipLogins");
+            modelBuilder.Entity<IdentityRole>().ToTable("MembershipRoles");
+            modelBuilder.Entity<UserMembership>().ToTable("UserMemberships");
             
             SetKeys(modelBuilder);
             SetOneNavigation(modelBuilder);
@@ -74,6 +83,16 @@ namespace Viainternet.OnionArchitecture.Infrastructure
                 .HasForeignKey(x => x.MunicipalityId)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<UserProfile>()
+                .HasRequired(x => x.Language)
+                .WithMany(x => x.UserProfiles)
+                .HasForeignKey(x => x.LanguageId);
+
+            modelBuilder.Entity<UserProfile>()
+                .HasRequired(x => x.TimeZone)
+                .WithMany(x => x.UserProfiles)
+                .HasForeignKey(x => x.TimeZoneId);
+
             modelBuilder.Entity<Municipality>()
                 .HasRequired(x => x.State)
                 .WithMany(x => x.Municipalities)
@@ -89,6 +108,16 @@ namespace Viainternet.OnionArchitecture.Infrastructure
                 .WithMany(x => x.PhoneNumbers)
                 .HasForeignKey(x => x.AreaCodeId);
 
+            modelBuilder.Entity<TranslationText>()
+                .HasRequired(x => x.Translation)
+                .WithMany(x => x.TranslationTexts)
+                .HasForeignKey(x => x.TranslationId);
+
+            modelBuilder.Entity<TranslationText>()
+                .HasRequired(x => x.Language)
+                .WithMany(x => x.TranslationTexts)
+                .HasForeignKey(x => x.LanguageId);
+
             // Those two mapping are a many to many but define like 
             // one two many because we need the between table exist
             // in c# class to save extra data in it.
@@ -101,6 +130,19 @@ namespace Viainternet.OnionArchitecture.Infrastructure
                 .HasRequired(x => x.UserMembership)
                 .WithMany(x => x.UserMembershipSettings)
                 .HasForeignKey(x => x.UserMembershipId);
+
+            SetTranslationMapping(modelBuilder);
+        }
+        /// <summary>
+        /// The translation table could have many one to many mapping between tables. So use that method to setup those mapping.
+        /// </summary>
+        /// <param name="modelBuilder"></param>
+        private void SetTranslationMapping(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Gender>()
+                .HasRequired(x => x.Translation)
+                .WithMany(x => x.Genders)
+                .HasForeignKey(x => x.TranslationId);
         }
         /// <summary>
         /// 
@@ -168,9 +210,24 @@ namespace Viainternet.OnionArchitecture.Infrastructure
 
             modelBuilder.Entity<UserSetting>()
                 .HasKey(x => x.Id);
-            
+
+            modelBuilder.Entity<Translation>()
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Language>()
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Gender>()
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Viainternet.OnionArchitecture.Core.Domain.Models.TimeZone>()
+                .HasKey(x => x.Id);
+
             modelBuilder.Entity<UserMembershipSetting>()
                 .HasKey(x => new { x.UserMembershipId, x.UserSettingId });
+
+            modelBuilder.Entity<TranslationText>()
+                .HasKey(x => new { x.TranslationId, x.LanguageId });
         }
 
         public void SyncObjectsStatePostCommit()

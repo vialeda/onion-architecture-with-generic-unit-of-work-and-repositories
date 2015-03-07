@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Viainternet.OnionArchitecture.Core.Interfaces;
 
 namespace Viainternet.OnionArchitecture.Core.Domain.Models
 {
+    using Core.Interfaces;
     public class CompanyProfile : Entity, IAdress
     {
         public CompanyProfile()

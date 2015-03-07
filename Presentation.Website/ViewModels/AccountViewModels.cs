@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Viainternet.OnionArchitecture.Core.Domain.Models;
 
-namespace Presentation.Website.Models
+namespace Viainternet.OnionArchitecture.Presentation.Website.ViewModels
 {
     // Models returned by AccountController actions.
     public class ExternalLoginConfirmationViewModel
@@ -87,6 +88,7 @@ namespace Presentation.Website.Models
 
         [Display(Name = "Hometown")]
         public string Hometown { get; set; }
+        
     }
 
     public class ResetPasswordViewModel

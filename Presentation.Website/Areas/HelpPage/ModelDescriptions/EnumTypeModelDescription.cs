@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Presentation.Website.Areas.HelpPage.ModelDescriptions
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.ModelDescriptions
 {
     public class EnumTypeModelDescription : ModelDescription
     {

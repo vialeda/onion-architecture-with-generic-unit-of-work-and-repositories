@@ -126,11 +126,26 @@
     <Compile Include="Domain\Models\Country.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Domain\Models\Gender.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\Models\Language.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Domain\Models\Municipality.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domain\Models\PhoneNumber.cs" />
     <Compile Include="Domain\Models\SystemSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\Models\TimeZone.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\Models\Translation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\Models\TranslationText.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domain\Models\UserMembership.cs" />
@@ -148,29 +163,33 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Domain\Service.cs" />
-    <Compile Include="Enumerations\ObjectState.cs" />
-    <Compile Include="Interfaces\IAdress.cs" />
-    <Compile Include="Interfaces\IEntity.cs" />
-    <Compile Include="Interfaces\IDataContext.cs" />
-    <Compile Include="Interfaces\IDataContextAsync.cs" />
-    <Compile Include="Interfaces\IObjectState.cs" />
-    <Compile Include="Interfaces\IQueryFluent.cs" />
-    <Compile Include="Interfaces\IQueryObject.cs" />
-    <Compile Include="Interfaces\IRepositories\IRepository.cs" />
-    <Compile Include="Interfaces\IRepositories\IRepositoryAsync.cs" />
-    <Compile Include="Interfaces\IRepositories\IRepositoryProvider.cs" />
-    <Compile Include="Interfaces\IServices\ICacheService.cs" />
-    <Compile Include="Interfaces\IServices\IEntitiesContext.cs" />
-    <Compile Include="Interfaces\IServices\IMovieService.cs" />
-    <Compile Include="Interfaces\IServices\IService.cs" />
-    <Compile Include="Interfaces\IServices\IUnitOfWork.cs" />
-    <Compile Include="Interfaces\IUnitOfWorkAsync.cs" />
-    <Compile Include="Interfaces\IUploadable.cs" />
+    <Compile Include="ObjectState.cs" />
+    <Compile Include="Domain\Interfaces\IAdress.cs" />
+    <Compile Include="Domain\Interfaces\IEntity.cs" />
+    <Compile Include="Domain\Interfaces\IDataContext.cs" />
+    <Compile Include="Domain\Interfaces\IDataContextAsync.cs" />
+    <Compile Include="Domain\Interfaces\IObjectState.cs" />
+    <Compile Include="Domain\Interfaces\IQueryFluent.cs" />
+    <Compile Include="Domain\Interfaces\IQueryObject.cs" />
+    <Compile Include="Domain\Interfaces\IRepositories\IRepository.cs" />
+    <Compile Include="Domain\Interfaces\IRepositories\IRepositoryAsync.cs" />
+    <Compile Include="Domain\Interfaces\IRepositories\IRepositoryProvider.cs" />
+    <Compile Include="Domain\Interfaces\IServices\ICacheService.cs" />
+    <Compile Include="Domain\Interfaces\IServices\IEntitiesContext.cs" />
+    <Compile Include="Domain\Interfaces\IServices\IMovieService.cs" />
+    <Compile Include="Domain\Interfaces\IServices\IService.cs" />
+    <Compile Include="Domain\Interfaces\IServices\IUnitOfWork.cs" />
+    <Compile Include="Domain\Interfaces\IServices\IUserMembershipService.cs" />
+    <Compile Include="Domain\Interfaces\IUnitOfWorkAsync.cs" />
+    <Compile Include="Domain\Interfaces\IUploadable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enumerations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

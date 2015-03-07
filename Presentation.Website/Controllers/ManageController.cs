@@ -1,16 +1,14 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Presentation.Website.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Viainternet.OnionArchitecture.Infrastructure.Logging;
 
-namespace Presentation.Website.Controllers
+namespace Viainternet.OnionArchitecture.Presentation.Website.Controllers
 {
-    [Authorize]
+    using Presentation.Website.Models;
+    
     public class ManageController : BaseController
     {
         public ManageController()

@@ -1,6 +1,6 @@
 using System;
 
-namespace Presentation.Website.Areas.HelpPage.ModelDescriptions
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

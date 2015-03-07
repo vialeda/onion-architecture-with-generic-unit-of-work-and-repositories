@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace Presentation.Website.Areas.HelpPage.ModelDescriptions
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

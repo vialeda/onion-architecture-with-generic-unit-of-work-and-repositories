@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using Presentation.Website.Areas.HelpPage.ModelDescriptions;
-using Presentation.Website.Areas.HelpPage.Models;
+using Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.ModelDescriptions;
+using Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.Models;
 
-namespace Presentation.Website.Areas.HelpPage
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

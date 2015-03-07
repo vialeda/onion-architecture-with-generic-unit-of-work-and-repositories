@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(Presentation.Website.Startup))]
+[assembly: OwinStartup(typeof(Viainternet.OnionArchitecture.Presentation.Website.Startup))]
 
-namespace Presentation.Website
+namespace Viainternet.OnionArchitecture.Presentation.Website
 {
     public partial class Startup
     {

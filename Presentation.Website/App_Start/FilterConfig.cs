@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Presentation.Website
+namespace Viainternet.OnionArchitecture.Presentation.Website
 {
     public class FilterConfig
     {

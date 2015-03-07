@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Optimization;
 
-namespace Presentation.Website
+namespace Viainternet.OnionArchitecture.Presentation.Website
 {
     public class BundleConfig
     {

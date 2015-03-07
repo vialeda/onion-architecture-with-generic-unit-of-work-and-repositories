@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Presentation.Website.Areas.HelpPage.ModelDescriptions;
+using Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.ModelDescriptions;
 
-namespace Presentation.Website.Areas.HelpPage.Models
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

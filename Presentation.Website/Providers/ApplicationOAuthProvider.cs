@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Owin.Security.OAuth;
 
-namespace Presentation.Website.Providers
+namespace Viainternet.OnionArchitecture.Presentation.Website.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

@@ -45,7 +45,11 @@ namespace Viainternet.OnionArchitecture.Infrastructure.DependecyResolution
                    new InjectionConstructor(new object[] { new RepositoryFactories() }))
                .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                .RegisterType<IRepositoryAsync<Movie>, Repository<Movie>>()
+               .RegisterType<IRepositoryAsync<UserMembership>, Repository<UserMembership>>()
                .RegisterType<IMovieService, MovieService>(
+                    new Interceptor<InterfaceInterceptor>(),
+                    new InterceptionBehavior<CachingInterceptorAttribute>())
+                .RegisterType<IUserMembershipService, UserMembershipService>(
                     new Interceptor<InterfaceInterceptor>(),
                     new InterceptionBehavior<CachingInterceptorAttribute>())
                .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())

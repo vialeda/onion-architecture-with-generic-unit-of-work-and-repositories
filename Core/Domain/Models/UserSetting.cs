@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Viainternet.OnionArchitecture.Core.Domain.Models
 {
@@ -19,7 +15,6 @@ namespace Viainternet.OnionArchitecture.Core.Domain.Models
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public int ValueType { get; set; }
-
         public virtual ICollection<UserMembershipSetting> UserMembershipSettings { get; set; }
     }
 }

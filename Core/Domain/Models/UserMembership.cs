@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -61,13 +60,5 @@ namespace Viainternet.OnionArchitecture.Core.Domain.Models
         public virtual UserProfile UserProfile { get; set; }
         public virtual ICollection<CompanyProfile> CompagnyProfiles { get; set; }
         public virtual ICollection<UserMembershipSetting> UserMembershipSettings { get; set; }
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserMembership> manager)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-
-            // Add custom user claims here
-            return userIdentity;
-        }
     }
 }

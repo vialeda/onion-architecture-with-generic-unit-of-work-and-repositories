@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace Presentation.Website.Areas.HelpPage
+namespace Viainternet.OnionArchitecture.Presentation.Website.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

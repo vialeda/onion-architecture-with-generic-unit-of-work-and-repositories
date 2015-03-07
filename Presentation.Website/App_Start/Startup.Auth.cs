@@ -4,15 +4,16 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using Presentation.Website.Models;
-using Presentation.Website.Providers;
+using Viainternet.OnionArchitecture.Presentation.Website.Models;
+using Viainternet.OnionArchitecture.Presentation.Website.Providers;
 using System;
 using Viainternet.OnionArchitecture.Core.Domain.Models;
 using Viainternet.OnionArchitecture.Core.Services;
 using Viainternet.OnionArchitecture.Infrastructure;
 using Viainternet.OnionArchitecture.Infrastructure.Logging;
+using Viainternet.OnionArchitecture.Infrastructure.Repositories;
 
-namespace Presentation.Website
+namespace Viainternet.OnionArchitecture.Presentation.Website
 {
     public partial class Startup
     {
@@ -42,7 +43,7 @@ namespace Presentation.Website
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<UserMembershipManager>(UserMembershipManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
-
+            
             // Enable the application to use a cookie to store information for the signed in user
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {

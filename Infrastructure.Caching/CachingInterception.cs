@@ -140,6 +140,13 @@ namespace Infrastructure.Caching
 
         private void Initialize(TimeSpan? cacheExpiration = null)
         {
+            
+            if (ConfigurationManager.AppSettings["CachedExpiration"] == null)
+            {
+                const string noCachedExpiration = @"Their is no cache expiration value in web.config. You have to add <add key=""CachedExpiration"" value=""00:05:00""/>";
+                throw new ArgumentNullException(noCachedExpiration);
+            }
+
             this._cache = MemoryCache.Default;
             this._expiration = cacheExpiration ?? (TimeSpan)new InfiniteTimeSpanConverter().ConvertFromString(ConfigurationManager.AppSettings["CachedExpiration"]);
         }
